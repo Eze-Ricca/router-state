@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/router-state/",
+  base: "https://Eze-Ricca.github.io","/router-state/",
 });
