@@ -224,13 +224,13 @@
     <br>
     <button-el  contenido="Comenzar" ConColor id="welcome"></button-el>
     `;const n=r.getState(),s=t.querySelector("#welcome"),e=t.querySelector("#error");return s.addEventListener("click",()=>{const a=d.getState().input;if(a){e.style.display="none";const l=n;l.nombre=a,r.setState(l),d.setState({input:""}),console.log(r.getState()),o.goTo("/step1")}else{e.textContent="El nombre no puede estar vacío!";return}}),t}function S(o){const t=document.createElement("div"),n=r.getState();return t.innerHTML=`
-    <title-el style="text-align:center">Gracias ${n.nombre}</title-el>
+    <title-el style="text-align:center">Gracias ${n.nombre}!</title-el>
     <subtitle-el>Toda la informacion que nos brindaste es muy importante</subtitle-el>
     <br>
     <br>
     <p>Email: <strong>${n.email}</strong></p>
-    <p>Bebida: <strong>${n.bebida}</strong></p>
-    <p>Comida:<strong>${n.comida}</strong></p>
+    <p>Bebida: <strong> ${n.bebida}</strong></p>
+    <p>Comida:<strong> ${n.comida}</strong></p>
     
     <button-el id="thankyou" contenido="De nada" ConColor><button-el>
     `,t.querySelector("#thankyou").addEventListener("click",()=>{o.goTo("/welcome")}),t}const E=[{path:/\/welcome/,component:v},{path:/\/step1/,component:w},{path:/\/thankyou/,component:S}];function L(o){function t(s){s==="/"&&n("/welcome"),E.forEach(e=>{if(e.path.test(s)){const i=e.component({goTo:n});o.innerHTML="",o.appendChild(i)}})}function n(s){history.pushState({},"",s),t(s)}t(location.pathname),window.addEventListener("popstate",()=>{t(location.pathname)})}const T=document.querySelector("#app");L(T);
